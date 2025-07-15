@@ -2,7 +2,6 @@ package ar.dev.maxisandoval.googledrivepubliclinkfinder.util;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-
 import java.util.Random;
 
 @Component
