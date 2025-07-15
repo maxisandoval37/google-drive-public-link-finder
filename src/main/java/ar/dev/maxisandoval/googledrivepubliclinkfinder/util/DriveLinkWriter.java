@@ -22,7 +22,7 @@ public class DriveLinkWriter {
 
             out.println(url);
         } catch (IOException e) {
-            log.error("Error al escribir en archivo: " + e.getMessage());
+            log.error("Error in writeValidLink: " + e.getMessage());
         }
     }
 }
