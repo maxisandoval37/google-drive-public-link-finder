@@ -23,7 +23,7 @@ public class DriveLinkService {
                 while (true) {
                     String id = generator.generateRandomId(33);
                     String url = "https://drive.google.com/drive/folders/" + id;
-                    checker.checkLink(url, id);
+                    checker.checkLink(url);
                 }
             });
         }

@@ -12,18 +12,21 @@ import java.net.URL;
 @Slf4j
 public class DriveLinkChecker {
 
-    public void checkLink(String url, String id) {
+    private final DriveLinkWriter driveLinkWriter;
+
+    public void checkLink(String url) {
         try {
-            HttpURLConnection connection = (HttpURLConnection) new URL(url.concat(id)).openConnection();
+            HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
             connection.setInstanceFollowRedirects(false);
             connection.setRequestMethod("GET");
             connection.setRequestProperty("User-Agent", "Mozilla/5.0");
             int status = connection.getResponseCode();
 
             if (status == 200) {
-                log.info("✅ URL válida: " + url);
+                driveLinkWriter.writeValidLink(url);
+                log.info("URL válida: " + url);
             } else {
-                log.info("❌ URL inválida: " + url + " (status: " + status + ")");
+                log.info("URL inválida: " + url + " (status: " + status + ")");
             }
 
             connection.disconnect();
