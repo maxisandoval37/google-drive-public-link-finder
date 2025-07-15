@@ -24,9 +24,9 @@ public class DriveLinkChecker {
 
             if (status == 200) {
                 driveLinkWriter.writeValidLink(url);
-                log.info("URL válida: " + url);
+                log.info("✅ Valid URL: " + url);
             } else {
-                log.info("URL inválida: " + url + " (status: " + status + ")");
+                log.info("❌ Invalid URL: " + url + " (status: " + status + ")");
             }
 
             connection.disconnect();
