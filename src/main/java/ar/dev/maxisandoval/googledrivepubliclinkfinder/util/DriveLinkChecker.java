@@ -31,7 +31,7 @@ public class DriveLinkChecker {
 
             connection.disconnect();
         } catch (IOException e) {
-            log.warn("Error al verificar: " + url + " - " + e.getMessage());
+            log.warn("Error: " + url + " - " + e.getMessage());
         }
     }
 }
